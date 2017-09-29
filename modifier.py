@@ -16,6 +16,7 @@ outputFields=['Product Group Name','Category Name','City','seating info','tags',
 'Summary','Neighbourhood','Start point address line 1','Start point address city','Start point address postal code','Start point address country','Start point address state',
 'End point address line 1','End point address city','End point address postal code','End point address state','End point address country','Adult Price','Child Price']
 
+finalOutputFields=[]
 CityFields =['cityCode','cityName','countryCode','timezone','cityLat','cityLong']
 
 cityWriter = csv.DictWriter(open(cityFile,'w'),fieldnames=CityFields,delimiter=',')
@@ -24,7 +25,9 @@ awWriter=csv.DictWriter(open(finalOutput,'w'),fieldnames=outputFields,delimiter=
 count =0
 awWriter.writeheader()
 mapdict={'Product Group Name':'tour_group','Summary':'description','Adult Price':'adult_price','Child Price':'child_price'
-,'City':'city'}
+,'City':'city','Start point address city':'city','End point address city':'city'}
+
+# formatWriter = 
 def getDefaultdata(row):
 	data={}
 	for key in outputFields:
@@ -59,7 +62,7 @@ def processWithlatlong(row,haslatlong=True):
 	for val in location[0].raw['address_components']:
 		print val
 		for typ in val['types']:
-			if typ == 'locality':
+			if typ == 'locality' and row['city'] == "":
 				data['Start point address city'] = val['long_name'].encode('ascii', 'ignore')
 				data['End point address city'] = val['long_name'].encode('ascii', 'ignore')
 				break
@@ -77,10 +80,11 @@ def processWithlatlong(row,haslatlong=True):
 			if typ == 'administrative_area_level_1':
 				data['Start point address state'] = val['long_name'].encode('ascii', 'ignore')
 				data['End point address state'] = val['long_name'].encode('ascii', 'ignore')
+			if (typ == 'administrative_area_level_2' or typ == 'administrative_area_level_3' or typ == 'administrative_area_level_4') and ('Neighborhood' not in data):
+				data['Neighbourhood'] = val['long_name'].encode('ascii', 'ignore')
 	# print data
 	awWriter.writerow(data)
 limit =50
-i=0
 def processCity(curcity):
 	location = None
 	for x in xrange(1,10):
@@ -107,18 +111,15 @@ def processCity(curcity):
 	cityWriter.writerow(cityListCsv)
 	print cityWriter
 cityList=set()
-for row in awReader:
-	# if (row['latitude'] =="" or row['longitude'] == "" ):
-	# 	prinocessWithlatlong(row,False)
-	# else:
-	# 	processWithlatlong(row)
-	# 	i +=1
-	# if i == 1:
-	# 	break
-	# curcity=row['city']
-	# if curcity !="":
-	# 	if curcity not in cityList:
-	# 		print curcity
-	# 		processCity(curcity)
-	# 		cityList.add(curcity)
-	# 		print cityList
+def update_old_sheet():
+	i=0
+	for row in awReader:
+		print i
+		if (row['latitude'] =="" or row['longitude'] == "" ):
+			processWithlatlong(row,False)
+		else:
+			processWithlatlong(row)
+			i +=1
+		if i==50:
+			break
+update_old_sheet()
