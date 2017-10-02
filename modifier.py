@@ -12,9 +12,7 @@ lat="latitude"
 lng="longitude"
 inputFields= ['tour_group','attraction_world_id','is_group_ticket','description','image_url','city','neighbourhood','postal_code','region','country','multiple_region'
 ,'address','latitude','longitude','adult_price','child_price','group_price']
-outputFields=['Product Group Name','Category Name','City','seating info','tags','Product name', 'Product Code','Product type','Languages',
-'Summary','Neighbourhood','Start point address line 1','Start point address city','Start point address postal code','Start point address country','Start point address state',
-'End point address line 1','End point address city','End point address postal code','End point address state','End point address country','Adult Price','Child Price']
+outputFields=Keys.getOutputFields()
 
 finalOutputFields=[]
 CityFields =['cityCode','cityName','countryCode','timezone','cityLat','cityLong']
