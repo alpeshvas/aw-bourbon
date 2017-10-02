@@ -1,6 +1,9 @@
 import csv
 from geopy.geocoders import GoogleV3
 import Keys
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 locator = GoogleV3(api_key=Keys.getkey(0))
 rownum=0;
 inputfile = "AW Products - Sheet1.csv"
@@ -25,10 +28,23 @@ awWriter.writeheader()
 mapdict={'Product Group Name':'tour_group','Product name':'tour_group','Summary':'description','Adult Price':'adult_price','Child Price':'child_price'
 ,'City':'city','Start point address city':'city','End point address city':'city'}
 
+defaultVals={'Product type':"Tour",'e':'Default Category','Languages':'English','Schedule Type':'Fixed',
+	'Duration Type':'Fixed','Hours(duration)':'1','Minutes(duration)':'1','Default availability':'UNLIMITED',
+	'Hotel pickup provided':'No',
+	'Profile Name':'General',
+	'Start Date (YY-MM-DD)':'2017-01-01',
+	'End Date  (YY-MM-DD)':'2017-01-01' }
+
+
 keycount=0
 curcount=0
 
 # formatWriter =
+def getDefaultInside(key):
+	if key in defaultVals:
+		return defaultVals[key]
+	return ""
+
 def updateLocator(i):
 	locator=GoogleV3(api_key=Keys.getkey(0)) 
 def getDefaultdata(row):
@@ -37,13 +53,13 @@ def getDefaultdata(row):
 		if key in mapdict:
 			data[key]=row[mapdict[key]]
 		else:
-			data[key]=""
+			data[key]=getDefaultInside(key)
 	return data
 
 def processWithlatlong(row,haslatlong=True):
 	try:
-		print row[lat]
-		print row[lng]
+		# print row[lat]
+		# print row[lng]
 		location= None	
 		for x in xrange(1,10):
 			try:
@@ -58,37 +74,38 @@ def processWithlatlong(row,haslatlong=True):
 				updateLocator(keycount)
 		data=getDefaultdata(row)
 		# print location[0].raw
-		data['Start point address line 1'] = location[0].address.encode('ascii', 'ignore')
-		data['End point address line 1'] = location[0].address.encode('ascii', 'ignore')
+		data['Start point address line 1'] = location[0].address
+		data['End point address line 1'] = location[0].address
 		try:
-			data['Neighbourhood'] = location[1].address.encode('ascii', 'ignore')
+			data['Neighbourhood'] = location[1].address
 		except:
 			pass
 		for val in location[0].raw['address_components']:
-			print val
+			# print val
 			for typ in val['types']:
 				if typ == 'locality' and row['city'] == "":
-					data['Start point address city'] = val['long_name'].encode('ascii', 'ignore')
-					data['End point address city'] = val['long_name'].encode('ascii', 'ignore')
+					data['Start point address city'] = val['long_name']
+					data['End point address city'] = val['long_name']
 					break
 				if typ == 'postal_code':
-					data['Start point address postal code'] = val['long_name'].encode('ascii', 'ignore')
-					data['End point address postal code'] = val['long_name'].encode('ascii', 'ignore')
+					data['Start point address postal code'] = val['long_name']
+					data['End point address postal code'] = val['long_name']
 					break
 				if typ == 'neighborhood':
-					data['Neighbourhood'] = val['long_name'].encode('ascii', 'ignore')
+					data['Neighbourhood'] = val['long_name']
 					break
 				if typ == 'country':
-					data['Start point address country'] = val['long_name'].encode('ascii', 'ignore')
-					data['End point address country'] = val['long_name'].encode('ascii', 'ignore')
+					data['Start point address country'] = val['long_name']
+					data['End point address country'] = val['long_name']
 					break
 				if typ == 'administrative_area_level_1':
-					data['Start point address state'] = val['long_name'].encode('ascii', 'ignore')
-					data['End point address state'] = val['long_name'].encode('ascii', 'ignore')
+					data['Start point address state'] = val['long_name']
+					data['End point address state'] = val['long_name']
 				if (typ == 'administrative_area_level_2' or typ == 'administrative_area_level_3' or typ == 'administrative_area_level_4') and ('Neighborhood' not in data):
-					data['Neighbourhood'] = val['long_name'].encode('ascii', 'ignore')
+					data['Neighbourhood'] = val['long_name']
 	# print data
 		awWriter.writerow(data)
+		print data
 		sleep(1)
 	except:
 		pass
@@ -113,7 +130,7 @@ def processCity(curcity):
 	for val in location[0].raw['address_components']:
 		for typ in val['types']:
 			if typ == 'country':
-				cityListCsv['countryCode'] = val['short_name'].encode('ascii', 'ignore')
+				cityListCsv['countryCode'] = val['short_name']
 				break
 
 	cityWriter.writerow(cityListCsv)
@@ -127,7 +144,7 @@ def update_old_sheet():
 			print row['tour_group']
 		else:
 			processWithlatlong(row)
-			# i +=1
-		# if i==50:
-		# 	break
+			i +=1
+		if i==10:
+			break
 update_old_sheet()
