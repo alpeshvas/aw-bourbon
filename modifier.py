@@ -34,7 +34,7 @@ defaultVals={'Product type':"Tour",'Category Name':'Default Category','Languages
 	'Profile Name':'General',
 	'Start Date (YY-MM-DD)':'2017-01-01',
 	'End Date  (YY-MM-DD)':'2017-01-01',
-	'Private tour':'YES' 
+	'Private tour':'YES',
 	'Customer details':'LEAD_PERSON',
 	'cashback value':'0',
 	'cashback type':'PERCENTAGE'}
@@ -87,18 +87,21 @@ def processWithlatlong(row,haslatlong=True):
 			for part in AddrestobeSplitted:
 				if done==False:
 					if (len(part)+len(addressLine1))<60:
-						addressLine1 +=part
+						addressLine1 +=part+","
 					else:
 						done=True
-						addressLine2=part
+						addressLine2=part+","
 				else:
-					addressLine2 +=part
+					addressLine2 +=part+","
+			data['Start point address line 1'] = addressLine1
+			data['End point address line 1'] = addressLine1
 
-		data['Start point address line 1'] = addressLine1
-		data['End point address line 1'] = addressLine1
+			data['Start point address line 2'] = addressLine2
+			data['End point address line 2'] = addressLine2
+		else:
+			data['Start point address line 1'] = location[0].address
+			data['End point address line 1'] = location[0].address			
 
-		data['Start point address line 2'] = addressLine2
-		data['End point address line 2'] = addressLine2
 		try:
 			data['Neighbourhood'] = location[1].address
 		except:
