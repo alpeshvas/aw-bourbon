@@ -78,8 +78,27 @@ def processWithlatlong(row,haslatlong=True):
 				updateLocator(keycount)
 		data=getDefaultdata(row)
 		# print location[0].raw
-		data['Start point address line 1'] = location[0].address
-		data['End point address line 1'] = location[0].address
+		AddrestobeSplitted=location[0].address.split(",");
+		addressLine1=""
+		addressLine2=""
+		leftcount=0
+		if(len(location[0].address))>60:
+			done=False
+			for part in AddrestobeSplitted:
+				if done==False:
+					if (len(part)+len(addressLine1))<60:
+						addressLine1 +=part
+					else:
+						done=True
+						addressLine2=part
+				else:
+					addressLine2 +=part
+
+		data['Start point address line 1'] = addressLine1
+		data['End point address line 1'] = addressLine1
+
+		data['Start point address line 2'] = addressLine2
+		data['End point address line 2'] = addressLine2
 		try:
 			data['Neighbourhood'] = location[1].address
 		except:
