@@ -28,12 +28,16 @@ awWriter.writeheader()
 mapdict={'Product Group Name':'tour_group','Product name':'tour_group','Summary':'description','Adult Price':'adult_price','Child Price':'child_price'
 ,'City':'city','Start point address city':'city','End point address city':'city'}
 
-defaultVals={'Product type':"Tour",'e':'Default Category','Languages':'English','Schedule Type':'Fixed',
+defaultVals={'Product type':"Tour",'Category Name':'Default Category','Languages':'English','Schedule Type':'Fixed',
 	'Duration Type':'Fixed','Hours(duration)':'1','Minutes(duration)':'1','Default availability':'UNLIMITED',
 	'Hotel pickup provided':'No',
 	'Profile Name':'General',
 	'Start Date (YY-MM-DD)':'2017-01-01',
-	'End Date  (YY-MM-DD)':'2017-01-01' }
+	'End Date  (YY-MM-DD)':'2017-01-01',
+	'Private tour':'YES' 
+	'Customer details':'LEAD_PERSON',
+	'cashback value':'0',
+	'cashback type':'PERCENTAGE'}
 
 
 keycount=0
