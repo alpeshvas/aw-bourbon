@@ -182,12 +182,13 @@ awWriter.writerow(getEmptydata())
 def update_old_sheet():
 	i=0
 	for row in awReader:
+		print row['city']
 		print i
 		if (row['latitude'] =="" or row['longitude'] == "" ):
 			print row['tour_group']
 		else:
 			processWithlatlong(row)
 			i +=1
-		if i==1:
+		if i==50:
 			break
 update_old_sheet()
