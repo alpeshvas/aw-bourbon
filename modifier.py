@@ -26,7 +26,7 @@ awWriter=csv.DictWriter(open(finalOutput,'w'),fieldnames=outputFields,delimiter=
 count =0
 awWriter.writeheader()
 mapdict={'Product Group Name':'tour_group','Product name':'tour_group','Summary':'description','Adult Price':'adult_price','Child Price':'child_price'
-,'City':'city','Start point address city':'city','End point address city':'city'}
+,'City':'city','Start point address city':'city','End point address city':'city','Price per person':'adult_price'}
 
 defaultVals={'Product type':"Tour",'Category Name':'Default Category','Languages':'English','Schedule Type':'Fixed',
 	'Duration Type':'Fixed','Hours(duration)':'1','Minutes(duration)':'1','Default availability':'UNLIMITED',
@@ -37,7 +37,12 @@ defaultVals={'Product type':"Tour",'Category Name':'Default Category','Languages
 	'Private tour':'YES',
 	'Customer details':'LEAD_PERSON',
 	'cashback value':'0',
-	'cashback type':'PERCENTAGE'}
+	'cashback type':'PERCENTAGE',
+	'default discount':'0',
+	'Price Type':'PER_PERSON',
+	'Test':'test',
+	'Category':'Adult',
+	'Age from':'4'}
 
 
 keycount=0
@@ -50,7 +55,14 @@ def getDefaultInside(key):
 	return ""
 
 def updateLocator(i):
-	locator=GoogleV3(api_key=Keys.getkey(0)) 
+	locator=GoogleV3(api_key=Keys.getkey(0))
+
+def getEmptydata():
+	data={} 
+	for key in outputFields:
+		data[key]=""
+	return data
+
 def getDefaultdata(row):
 	data={}
 	for key in outputFields:
@@ -162,6 +174,8 @@ def processCity(curcity):
 	cityWriter.writerow(cityListCsv)
 	print cityWriter
 cityList=set()
+awWriter.writerow(getEmptydata())
+awWriter.writerow(getEmptydata())
 def update_old_sheet():
 	i=0
 	for row in awReader:
@@ -171,6 +185,6 @@ def update_old_sheet():
 		else:
 			processWithlatlong(row)
 			i +=1
-		if i==10:
+		if i==1:
 			break
 update_old_sheet()
