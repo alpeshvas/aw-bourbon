@@ -17,6 +17,7 @@ inputFields= ['tour_group','attraction_world_id','is_group_ticket','description'
 ,'address','latitude','longitude','adult_price','child_price','group_price']
 outputFields=Keys.getOutputFields()
 
+curCities=Keys.getCurrentCities()
 finalOutputFields=[]
 CityFields =['cityCode','cityName','countryCode','timezone','cityLat','cityLong']
 
@@ -76,6 +77,8 @@ def processWithlatlong(row,haslatlong=True):
 	try:
 		# print row[lat]
 		# print row[lng]
+		if row['city'].upper().replace(" ","_") in curCities:
+			return
 		location= None	
 		for x in xrange(1,10):
 			try:
