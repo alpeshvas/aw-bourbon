@@ -13,6 +13,7 @@ cityFile = "Cities.csv"
 awReader=csv.DictReader(open(inputfile,'rb'),delimiter=',', quotechar='"')
 lat="latitude"
 lng="longitude"
+from random import *
 inputFields= ['tour_group','attraction_world_id','is_group_ticket','description','image_url','city','neighbourhood','postal_code','region','country','multiple_region'
 ,'address','latitude','longitude','adult_price','child_price','group_price']
 outputFields=Keys.getOutputFields()
@@ -26,10 +27,11 @@ cityWriter.writeheader()
 awWriter=csv.DictWriter(open(finalOutput,'w'),fieldnames=outputFields,delimiter=',', quotechar='"')
 count =0
 awWriter.writeheader()
+categories=["Bestsellers","New Arrivals","Trending"]
 mapdict={'Product Group Name':'tour_group','Product name':'tour_group','Summary':'description','Adult Price':'adult_price','Child Price':'child_price'
 ,'City':'city','Start point address city':'city','End point address city':'city','Price per person':'adult_price'}
 
-defaultVals={'Product type':"Tour",'Category Name':'Default Category','Languages':'English','Schedule Type':'Fixed',
+defaultVals={'Product type':"Tour",'Languages':'English','Schedule Type':'Fixed',
 	'Duration Type':'Fixed','Hours(duration)':'1','Minutes(duration)':'1','Default availability':'UNLIMITED',
 	'Hotel pickup provided':'No',
 	'Profile Name':'General',
@@ -93,6 +95,7 @@ def processWithlatlong(row,haslatlong=True):
 				updateLocator(keycount)
 		data=getDefaultdata(row)
 		# print location[0].raw
+		# location[0].address = location[0].replace("Unnamed Road,","")
 		AddrestobeSplitted=location[0].address.split(",");
 		addressLine1=""
 		addressLine2=""
@@ -115,12 +118,12 @@ def processWithlatlong(row,haslatlong=True):
 			data['End point address line 2'] = addressLine2
 		else:
 			data['Start point address line 1'] = location[0].address
-			data['End point address line 1'] = location[0].address			
+			data['End point address line 1'] = location[0].address
 
-		try:
-			data['Neighbourhood'] = location[1].address
-		except:
-			pass
+		data['Start point address line 1'] = data['Start point address line 1'].replace("Unnamed Road,","")
+		data['End point address line 1'] = data['End point address line 1'].replace("Unnamed Road,","")
+
+
 		for val in location[0].raw['address_components']:
 			# print val
 			for typ in val['types']:
@@ -145,6 +148,12 @@ def processWithlatlong(row,haslatlong=True):
 				if (typ == 'administrative_area_level_2' or typ == 'administrative_area_level_3' or typ == 'administrative_area_level_4') and ('Neighborhood' not in data):
 					data['Neighbourhood'] = val['long_name']
 	# print data
+		data['Category Name'] = row['city']+": "+categories[randint(0,3)]
+		try:
+			if Neighbourhood not in data:
+				data['Neighbourhood'] = location[1].address.split(",")[0]
+		except:
+			pass
 		awWriter.writerow(data)
 		print data
 		sleep(1)
@@ -189,6 +198,6 @@ def update_old_sheet():
 		else:
 			processWithlatlong(row)
 			i +=1
-		if i==50:
+		if i==35:
 			break
 update_old_sheet()
