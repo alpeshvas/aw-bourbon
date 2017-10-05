@@ -15,6 +15,7 @@ tab="\t"
 tab2="\t\t"
 boundary='"'
 GenerateEnum=open("newCityEnums.txt",'w')
+generatedCountry=open("newCountries.txt","w")
 newCityListInPlainText=open("newCityInPlainText.txt",'w')
 def nameFinalizer(curcity):
 	finalCity=""
@@ -29,6 +30,7 @@ def nameFinalizer(curcity):
 	# print curcity+"-->"+finalCity
 	return finalCity
 citylist={}
+countrySet=set()
 def generateEnum():
 	for city in cityReader:
 		# print city
@@ -43,6 +45,9 @@ def generateEnum():
 		GenerateEnum.write( "\n" +tab2+boundary+city['cityName']+boundary+",")
 		newCityListInPlainText.write(city['cityName']+"\n")
 		GenerateEnum.write( "\n" +tab2+"Country."+city['countryCode']+",")
+		if(city['countryCode'] not in countrySet):
+			generatedCountry.write("\nCountry."+city['countryCode']+",")
+			countrySet.add(city['countryCode'])			
 		GenerateEnum.write( "\n" +tab2+boundary+city['timezone']+boundary+",")
 		GenerateEnum.write( "\n" +tab2+city['cityLat']+"d"+",")
 		GenerateEnum.write( "\n" +tab2+city['cityLong']+"d"+",")
