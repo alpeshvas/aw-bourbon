@@ -29,7 +29,7 @@ count =0
 awWriter.writeheader()
 categories=["Bestsellers","New Arrivals","Trending"]
 mapdict={'Product Group Name':'tour_group','Product name':'tour_group','Summary':'description','Adult Price':'adult_price','Child Price':'child_price'
-,'City':'city','Start point address city':'city','End point address city':'city','Price per person':'adult_price'}
+,'City':'city','Start point address city':'city','End point address city':'city','Price per person':'adult_price','Image Url':'image_url','Lat':'latitude','Long':'longitude'}
 
 defaultVals={'Product type':"Tour",'Languages':'English','Schedule Type':'Fixed',
 	'Duration Type':'Fixed','Hours(duration)':'1','Minutes(duration)':'1','Default availability':'UNLIMITED',
@@ -120,9 +120,6 @@ def processWithlatlong(row,haslatlong=True):
 			data['Start point address line 1'] = location[0].address
 			data['End point address line 1'] = location[0].address
 
-		data['Start point address line 1'] = data['Start point address line 1'].replace("Unnamed Road,","")
-		data['End point address line 1'] = data['End point address line 1'].replace("Unnamed Road,","")
-
 
 		for val in location[0].raw['address_components']:
 			# print val
@@ -198,6 +195,6 @@ def update_old_sheet():
 		else:
 			processWithlatlong(row)
 			i +=1
-		if i==35:
+		if i == 10:
 			break
 update_old_sheet()
