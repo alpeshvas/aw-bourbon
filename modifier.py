@@ -29,7 +29,7 @@ count =0
 awWriter.writeheader()
 categories=["Bestsellers","New Arrivals","Trending"]
 mapdict={'Product Group Name':'tour_group','Product name':'tour_group','Summary':'description','Adult Price':'adult_price','Child Price':'child_price'
-,'City':'city','Start point address city':'city','End point address city':'city','Price per person':'adult_price','Image Url':'image_url','Lat':'latitude','Long':'longitude'}
+,'City':'city','Start point address city':'city','Start point address country':'country','End point address country':'country','End point address city':'city','Price per person':'adult_price','Image Url':'image_url','Lat':'latitude','Long':'longitude'}
 
 defaultVals={'Product type':"Tour",'Languages':'English','Schedule Type':'Fixed',
 	'Duration Type':'Fixed','Hours(duration)':'1','Minutes(duration)':'1','Default availability':'UNLIMITED',
@@ -135,7 +135,7 @@ def processWithlatlong(row,haslatlong=True):
 				if typ == 'neighborhood':
 					data['Neighbourhood'] = val['long_name']
 					break
-				if typ == 'country':
+				if typ == 'country' and data['Start point address country'] !='':
 					data['Start point address country'] = val['long_name']
 					data['End point address country'] = val['long_name']
 					break
@@ -194,7 +194,5 @@ def update_old_sheet():
 			print row['tour_group']
 		else:
 			processWithlatlong(row)
-			i +=1
-		if i == 10:
-			break
+			i +=1	
 update_old_sheet()
