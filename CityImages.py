@@ -2,6 +2,8 @@ import csv
 import urllib2
 import requests
 import time
+import os
+import s3Upload
 cityFile="../newCityInPlainText.txt"
 baseUrl="http://www.attractionworld.com/images/static/banners/%s-region-banner.jpg"
 cities = open(cityFile,'rb')
@@ -33,5 +35,11 @@ def cityWhichExist():
 				notExist.write("Url for city "+ row + " does not exist\n")
 				notExist.write("url is "+imageUrl+"\n")		
 def cityDoesNotExist():
-	
-	time.sleep(1)
+	pass
+def uploadtoS3():
+	for file in os.listdir(outDirc):
+		formattedFileName = file.split(".")[0].lower().replace(' ','-')
+		s3Upload.upload(outDirc+"/"+file, formattedFileName)
+		# break
+
+uploadtoS3()
