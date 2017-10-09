@@ -1,6 +1,6 @@
 from boto.s3.connection import S3Connection
 conn=S3Connection()
-bucket = conn.get_bucket('headout-dev')
+bucket = conn.get_bucket('tourlandish')
 # print myBucket.list()
 def upload(filepath,filename):
 	print filepath

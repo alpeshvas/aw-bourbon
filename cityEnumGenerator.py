@@ -44,6 +44,7 @@ def generateEnum():
 		GenerateEnum.write( "\n" +tab+nameFinalizer(city['cityCode'])+"(")
 		GenerateEnum.write( "\n" +tab2+boundary+city['cityName']+boundary+",")
 		newCityListInPlainText.write(city['cityName']+"\n")
+		print city['cityName']
 		GenerateEnum.write( "\n" +tab2+"Country."+city['countryCode']+",")
 		if(city['countryCode'] not in countrySet):
 			generatedCountry.write("\nCountry."+city['countryCode']+",")

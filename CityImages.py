@@ -42,4 +42,5 @@ def uploadtoS3():
 		s3Upload.upload(outDirc+"/"+file, formattedFileName)
 		# break
 
-uploadtoS3()
+# uploadtoS3()
+cityWhichExist()

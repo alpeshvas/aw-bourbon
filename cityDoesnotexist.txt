@@ -1,0 +1,154 @@
+Url for city Alnwick does not exist
+url is http://www.attractionworld.com/images/static/banners/alnwick-region-banner.jpg
+Url for city Argyll does not exist
+url is http://www.attractionworld.com/images/static/banners/argyll-region-banner.jpg
+Url for city Atlanta does not exist
+url is http://www.attractionworld.com/images/static/banners/atlanta-region-banner.jpg
+Url for city Aveiro does not exist
+url is http://www.attractionworld.com/images/static/banners/aveiro-region-banner.jpg
+Url for city Bath does not exist
+url is http://www.attractionworld.com/images/static/banners/bath-region-banner.jpg
+Url for city Battersea does not exist
+url is http://www.attractionworld.com/images/static/banners/battersea-region-banner.jpg
+Url for city Belfast does not exist
+url is http://www.attractionworld.com/images/static/banners/belfast-region-banner.jpg
+Url for city Bergen does not exist
+url is http://www.attractionworld.com/images/static/banners/bergen-region-banner.jpg
+Url for city Bournemouth does not exist
+url is http://www.attractionworld.com/images/static/banners/bournemouth-region-banner.jpg
+Url for city Brighton does not exist
+url is http://www.attractionworld.com/images/static/banners/brighton-region-banner.jpg
+Url for city Brussels does not exist
+url is http://www.attractionworld.com/images/static/banners/brussels-region-banner.jpg
+Url for city Cadiz does not exist
+url is http://www.attractionworld.com/images/static/banners/cadiz-region-banner.jpg
+Url for city Cambridge does not exist
+url is http://www.attractionworld.com/images/static/banners/cambridge-region-banner.jpg
+Url for city Canterbury does not exist
+url is http://www.attractionworld.com/images/static/banners/canterbury-region-banner.jpg
+Url for city Cardiff does not exist
+url is http://www.attractionworld.com/images/static/banners/cardiff-region-banner.jpg
+Url for city Chessington does not exist
+url is http://www.attractionworld.com/images/static/banners/chessington-region-banner.jpg
+Url for city Chester does not exist
+url is http://www.attractionworld.com/images/static/banners/chester-region-banner.jpg
+Url for city Cologne does not exist
+url is http://www.attractionworld.com/images/static/banners/cologne-region-banner.jpg
+Url for city Copenhagen does not exist
+url is http://www.attractionworld.com/images/static/banners/copenhagen-region-banner.jpg
+Url for city Cordoba does not exist
+url is http://www.attractionworld.com/images/static/banners/cordoba-region-banner.jpg
+Url for city Costa Brava does not exist
+url is http://www.attractionworld.com/images/static/banners/costa-brava-region-banner.jpg
+Url for city Cullompton does not exist
+url is http://www.attractionworld.com/images/static/banners/cullompton-region-banner.jpg
+Url for city Cyprus - All does not exist
+url is http://www.attractionworld.com/images/static/banners/cyprus---all-region-banner.jpg
+Url for city Dallas does not exist
+url is http://www.attractionworld.com/images/static/banners/dallas-region-banner.jpg
+Url for city Doncaster does not exist
+url is http://www.attractionworld.com/images/static/banners/doncaster-region-banner.jpg
+Url for city Dunstable does not exist
+url is http://www.attractionworld.com/images/static/banners/dunstable-region-banner.jpg
+Url for city Durham does not exist
+url is http://www.attractionworld.com/images/static/banners/durham-region-banner.jpg
+Url for city Fort Lauderdale does not exist
+url is http://www.attractionworld.com/images/static/banners/fort-lauderdale-region-banner.jpg
+Url for city Great Yarmouth does not exist
+url is http://www.attractionworld.com/images/static/banners/great-yarmouth-region-banner.jpg
+Url for city Hampton Village does not exist
+url is http://www.attractionworld.com/images/static/banners/hampton-village-region-banner.jpg
+Url for city Hawaii (Koa) does not exist
+url is http://www.attractionworld.com/images/static/banners/hawaii-(koa)-region-banner.jpg
+Url for city Helsinki does not exist
+url is http://www.attractionworld.com/images/static/banners/helsinki-region-banner.jpg
+Url for city Houston does not exist
+url is http://www.attractionworld.com/images/static/banners/houston-region-banner.jpg
+Url for city Hunstanton does not exist
+url is http://www.attractionworld.com/images/static/banners/hunstanton-region-banner.jpg
+Url for city Inverness does not exist
+url is http://www.attractionworld.com/images/static/banners/inverness-region-banner.jpg
+Url for city Jerez does not exist
+url is http://www.attractionworld.com/images/static/banners/jerez-region-banner.jpg
+Url for city Kauai does not exist
+url is http://www.attractionworld.com/images/static/banners/kauai-region-banner.jpg
+Url for city Kemer does not exist
+url is http://www.attractionworld.com/images/static/banners/kemer-region-banner.jpg
+Url for city Leeds does not exist
+url is http://www.attractionworld.com/images/static/banners/leeds-region-banner.jpg
+Url for city Lima does not exist
+url is http://www.attractionworld.com/images/static/banners/lima-region-banner.jpg
+Url for city Llandudno does not exist
+url is http://www.attractionworld.com/images/static/banners/llandudno-region-banner.jpg
+Url for city Loddon - Norwich does not exist
+url is http://www.attractionworld.com/images/static/banners/loddon---norwich-region-banner.jpg
+Url for city Luxembourg does not exist
+url is http://www.attractionworld.com/images/static/banners/luxembourg-region-banner.jpg
+Url for city Marrakesh does not exist
+url is http://www.attractionworld.com/images/static/banners/marrakesh-region-banner.jpg
+Url for city Maui does not exist
+url is http://www.attractionworld.com/images/static/banners/maui-region-banner.jpg
+Url for city Memphis does not exist
+url is http://www.attractionworld.com/images/static/banners/memphis-region-banner.jpg
+Url for city Monte Gordo does not exist
+url is http://www.attractionworld.com/images/static/banners/monte-gordo-region-banner.jpg
+Url for city Munich does not exist
+url is http://www.attractionworld.com/images/static/banners/munich-region-banner.jpg
+Url for city Myrtle Beach does not exist
+url is http://www.attractionworld.com/images/static/banners/myrtle-beach-region-banner.jpg
+Url for city Newcastle does not exist
+url is http://www.attractionworld.com/images/static/banners/newcastle-region-banner.jpg
+Url for city Oahu does not exist
+url is http://www.attractionworld.com/images/static/banners/oahu-region-banner.jpg
+Url for city Oban does not exist
+url is http://www.attractionworld.com/images/static/banners/oban-region-banner.jpg
+Url for city Oslo does not exist
+url is http://www.attractionworld.com/images/static/banners/oslo-region-banner.jpg
+Url for city Oxford does not exist
+url is http://www.attractionworld.com/images/static/banners/oxford-region-banner.jpg
+Url for city Portsmouth does not exist
+url is http://www.attractionworld.com/images/static/banners/portsmouth-region-banner.jpg
+Url for city Portstewart does not exist
+url is http://www.attractionworld.com/images/static/banners/portstewart-region-banner.jpg
+Url for city Potsdam does not exist
+url is http://www.attractionworld.com/images/static/banners/potsdam-region-banner.jpg
+Url for city Riviera Maya does not exist
+url is http://www.attractionworld.com/images/static/banners/riviera-maya-region-banner.jpg
+Url for city Saffron Walden does not exist
+url is http://www.attractionworld.com/images/static/banners/saffron-walden-region-banner.jpg
+Url for city Sharjah does not exist
+url is http://www.attractionworld.com/images/static/banners/sharjah-region-banner.jpg
+Url for city Sintra does not exist
+url is http://www.attractionworld.com/images/static/banners/sintra-region-banner.jpg
+Url for city Stafford does not exist
+url is http://www.attractionworld.com/images/static/banners/stafford-region-banner.jpg
+Url for city Stavanger does not exist
+url is http://www.attractionworld.com/images/static/banners/stavanger-region-banner.jpg
+Url for city Stockholm does not exist
+url is http://www.attractionworld.com/images/static/banners/stockholm-region-banner.jpg
+Url for city Stratford Upon Avon does not exist
+url is http://www.attractionworld.com/images/static/banners/stratford-upon-avon-region-banner.jpg
+Url for city Strood does not exist
+url is http://www.attractionworld.com/images/static/banners/strood-region-banner.jpg
+Url for city Tallinn does not exist
+url is http://www.attractionworld.com/images/static/banners/tallinn-region-banner.jpg
+Url for city Tampa does not exist
+url is http://www.attractionworld.com/images/static/banners/tampa-region-banner.jpg
+Url for city Tbillsi does not exist
+url is http://www.attractionworld.com/images/static/banners/tbillsi-region-banner.jpg
+Url for city Toledo does not exist
+url is http://www.attractionworld.com/images/static/banners/toledo-region-banner.jpg
+Url for city Towcester does not exist
+url is http://www.attractionworld.com/images/static/banners/towcester-region-banner.jpg
+Url for city Various does not exist
+url is http://www.attractionworld.com/images/static/banners/various-region-banner.jpg
+Url for city Verona does not exist
+url is http://www.attractionworld.com/images/static/banners/verona-region-banner.jpg
+Url for city Warwick does not exist
+url is http://www.attractionworld.com/images/static/banners/warwick-region-banner.jpg
+Url for city Weymouth does not exist
+url is http://www.attractionworld.com/images/static/banners/weymouth-region-banner.jpg
+Url for city Windsor does not exist
+url is http://www.attractionworld.com/images/static/banners/windsor-region-banner.jpg
+Url for city Woodstock does not exist
+url is http://www.attractionworld.com/images/static/banners/woodstock-region-banner.jpg
